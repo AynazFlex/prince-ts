@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100dvh; /* Динамическая мобильная высота */
+  overflow: hidden;
+  background-color: #0c0205; /* Глубокий бархатный багрово-черный */
+  color: #f8fafc;
+}
+
+/* Глобальный сброс и настройка базового вида нод */
+.react-flow__node,
+.react-flow__node-input,
+.react-flow__node-default,
+.react-flow__node-output {
+  width: auto !important;
+  min-width: 200px;
+  max-width: 350px;
+  padding: 14px 18px !important;
+  border-radius: 4px !important;
+  
+  /* Базовый дизайн: темный монолит канцелярии */
+  background-color: #16060c !important;
+  border: 1px solid #2d0e17 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+  
+  color: #e2e8f0 !important;
+  font-family: monospace !important;
+  font-size: 12px !important;
+  text-align: left !important;
+  transition: all 0.25s ease-in-out;
+}
+
+/* Эффект интриги при наведении — золотистая подсветка */
+.react-flow__node:hover {
+  border-color: #d97706 !important;
+  box-shadow: 0 0 15px rgba(217, 119, 6, 0.2) !important;
+}
+
+/* Настройка контроллеров */
+.react-flow__controls {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7) !important;
+  border: 1px solid #2d0e17 !important;
+  border-radius: 4px !important;
+  overflow: hidden;
+}
+.react-flow__controls-button {
+  background: #16060c !important;
+  border-bottom: 1px solid #2d0e17 !important;
+  color: #881337 !important;
+  fill: #881337 !important;
+}
+.react-flow__controls-button:hover {
+  background: #2d0e17 !important;
+  color: #fb7185 !important;
+  fill: #fb7185 !important;
+}
+.react-flow__background {
+  opacity: 0.15;
+}
