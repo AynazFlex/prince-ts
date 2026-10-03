@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Chapter1 from "./components/Chapter1";
 import Chapter2 from "./components/Chapter2";
+import Chapter3 from "./components/Chapter3";
 
 interface Chapter {
   id: number;
@@ -22,7 +23,7 @@ const chapters: Chapter[] = [
     id: 3,
     title: "3. Смешанные княжества",
     section: "anatomy",
-    available: false,
+    available: true,
   },
   // В последующие дни мы добавим все 26 глав
 ];
@@ -116,6 +117,7 @@ export default function App() {
       <main className="flex-1 h-full bg-[#090204] relative w-full">
         {activeChapter === 1 && <Chapter1 />}
         {activeChapter === 2 && <Chapter2 />}
+        {activeChapter === 3 && <Chapter3 />}
       </main>
     </div>
   );
