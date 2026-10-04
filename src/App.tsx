@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Chapter1 from "./components/Chapter1";
 import Chapter2 from "./components/Chapter2";
 import Chapter3 from "./components/Chapter3";
+import Chapter4 from "./components/Chapter4";
 
 interface Chapter {
   id: number;
@@ -22,6 +23,12 @@ const chapters: Chapter[] = [
   {
     id: 3,
     title: "3. Смешанные княжества",
+    section: "anatomy",
+    available: true,
+  },
+  {
+    id: 4,
+    title: "4. Структура вертикали (Дарий)",
     section: "anatomy",
     available: true,
   },
@@ -118,6 +125,12 @@ export default function App() {
         {activeChapter === 1 && <Chapter1 />}
         {activeChapter === 2 && <Chapter2 />}
         {activeChapter === 3 && <Chapter3 />}
+        {activeChapter === 4 && <Chapter4 />}
+        {activeChapter > 4 && (
+          <div className="flex items-center justify-center h-full text-[#4c0519] text-xs tracking-widest uppercase font-bold">
+            Ожидание анализа следующего шага власти...
+          </div>
+        )}
       </main>
     </div>
   );
