@@ -3,6 +3,7 @@ import Chapter1 from "./components/Chapter1";
 import Chapter2 from "./components/Chapter2";
 import Chapter3 from "./components/Chapter3";
 import Chapter4 from "./components/Chapter4";
+import Chapter5 from "./components/Chapter5";
 
 interface Chapter {
   id: number;
@@ -29,6 +30,12 @@ const chapters: Chapter[] = [
   {
     id: 4,
     title: "4. Структура вертикали (Дарий)",
+    section: "anatomy",
+    available: true,
+  },
+  {
+    id: 5,
+    title: "5. Как управлять свободными городами",
     section: "anatomy",
     available: true,
   },
@@ -126,7 +133,8 @@ export default function App() {
         {activeChapter === 2 && <Chapter2 />}
         {activeChapter === 3 && <Chapter3 />}
         {activeChapter === 4 && <Chapter4 />}
-        {activeChapter > 4 && (
+        {activeChapter === 5 && <Chapter5 />}
+        {activeChapter > 5 && (
           <div className="flex items-center justify-center h-full text-[#4c0519] text-xs tracking-widest uppercase font-bold">
             Ожидание анализа следующего шага власти...
           </div>
