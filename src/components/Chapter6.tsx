@@ -82,7 +82,7 @@ const initialNodes: Node[] = [
       label:
         "❄️ Друзья: те, кому будет хорошо при новых (защищают вяло и нерешительно).",
     },
-    position: { x: 500, y: 380 },
+    position: { x: 590, y: 380 },
     className: nodeClasses.risk,
   },
 

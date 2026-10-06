@@ -107,25 +107,51 @@ export default function App() {
             <div className="text-[10px] text-amber-500/60 uppercase font-bold px-2 py-1 tracking-wider">
               I. Анатомия земель
             </div>
-            {chapters.map((ch) => (
-              <button
-                key={ch.id}
-                disabled={!ch.available}
-                onClick={() => {
-                  setActiveChapter(ch.id);
-                  setIsMenuOpen(false);
-                }}
-                className={`w-full text-left px-3 py-2.5 rounded text-xs transition-all ${
-                  activeChapter === ch.id
-                    ? "bg-[#4c0519]/30 text-rose-400 border border-[#881337]/50 shadow-[0_0_15px_rgba(136,19,55,0.2)] font-bold"
-                    : ch.available
-                      ? "text-slate-400 hover:bg-[#16060c] hover:text-slate-200"
-                      : "text-slate-700 cursor-not-allowed opacity-20"
-                }`}
-              >
-                {ch.title}
-              </button>
-            ))}
+            {chapters
+              .filter((ch) => ch.section === "anatomy")
+              .map((ch) => (
+                <button
+                  key={ch.id}
+                  disabled={!ch.available}
+                  onClick={() => {
+                    setActiveChapter(ch.id);
+                    setIsMenuOpen(false);
+                  }}
+                  className={`w-full text-left px-3 py-2.5 rounded text-xs transition-all ${
+                    activeChapter === ch.id
+                      ? "bg-[#4c0519]/30 text-rose-400 border border-[#881337]/50 shadow-[0_0_15px_rgba(136,19,55,0.2)] font-bold"
+                      : ch.available
+                        ? "text-slate-400 hover:bg-[#16060c] hover:text-slate-200"
+                        : "text-slate-700 cursor-not-allowed opacity-20"
+                  }`}
+                >
+                  {ch.title}
+                </button>
+              ))}
+            <div className="text-[10px] text-amber-500/60 uppercase font-bold px-2 py-1 tracking-wider">
+              II. Архитектура меча
+            </div>
+            {chapters
+              .filter((ch) => ch.section === "army")
+              .map((ch) => (
+                <button
+                  key={ch.id}
+                  disabled={!ch.available}
+                  onClick={() => {
+                    setActiveChapter(ch.id);
+                    setIsMenuOpen(false);
+                  }}
+                  className={`w-full text-left px-3 py-2.5 rounded text-xs transition-all ${
+                    activeChapter === ch.id
+                      ? "bg-[#4c0519]/30 text-rose-400 border border-[#881337]/50 shadow-[0_0_15px_rgba(136,19,55,0.2)] font-bold"
+                      : ch.available
+                        ? "text-slate-400 hover:bg-[#16060c] hover:text-slate-200"
+                        : "text-slate-700 cursor-not-allowed opacity-20"
+                  }`}
+                >
+                  {ch.title}
+                </button>
+              ))}
           </nav>
         </div>
 
