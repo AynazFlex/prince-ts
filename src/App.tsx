@@ -5,6 +5,7 @@ import Chapter3 from "./components/Chapter3";
 import Chapter4 from "./components/Chapter4";
 import Chapter5 from "./components/Chapter5";
 import Chapter6 from "./components/Chapter6";
+import Chapter7 from "./components/Chapter7";
 
 interface Chapter {
   id: number;
@@ -45,6 +46,36 @@ const chapters: Chapter[] = [
     title: "6. Новые княжества (Собственное оружие)",
     section: "anatomy",
     available: true,
+  },
+  {
+    id: 7,
+    title: "7. Новые княжества (Чужое оружие)",
+    section: "anatomy",
+    available: true,
+  },
+  {
+    id: 8,
+    title: "8. Новые княжества (Через злодеяния)",
+    section: "anatomy",
+    available: false,
+  },
+  {
+    id: 9,
+    title: "9. Гражданское княжество",
+    section: "anatomy",
+    available: false,
+  },
+  {
+    id: 10,
+    title: "10. Оценка сил государств",
+    section: "anatomy",
+    available: false,
+  },
+  {
+    id: 11,
+    title: "11. Церковные государства",
+    section: "anatomy",
+    available: false,
   },
   // В последующие дни мы добавим все 26 глав
 ];
@@ -168,7 +199,8 @@ export default function App() {
         {activeChapter === 4 && <Chapter4 />}
         {activeChapter === 5 && <Chapter5 />}
         {activeChapter === 6 && <Chapter6 />}
-        {activeChapter > 6 && (
+        {activeChapter === 7 && <Chapter7 />}
+        {activeChapter > 7 && (
           <div className="flex items-center justify-center h-full text-[#4c0519] text-xs tracking-widest uppercase font-bold">
             Ожидание анализа следующего шага власти...
           </div>
