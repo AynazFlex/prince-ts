@@ -9,6 +9,7 @@ import Chapter7 from "./components/Chapter7";
 import Chapter8 from "./components/Chapter8";
 import Chapter9 from "./components/Chapter9";
 import Chapter10 from "./components/Chapter10";
+import Chapter11 from "./components/Chapter11";
 
 interface Chapter {
   id: number;
@@ -78,7 +79,7 @@ const chapters: Chapter[] = [
     id: 11,
     title: "11. Церковные государства",
     section: "anatomy",
-    available: false,
+    available: true,
   },
   // В последующие дни мы добавим все 26 глав
 ];
@@ -206,7 +207,8 @@ export default function App() {
         {activeChapter === 8 && <Chapter8 />}
         {activeChapter === 9 && <Chapter9 />}
         {activeChapter === 10 && <Chapter10 />}
-        {activeChapter > 10 && (
+        {activeChapter === 11 && <Chapter11 />}
+        {activeChapter > 11 && (
           <div className="flex items-center justify-center h-full text-[#4c0519] text-xs tracking-widest uppercase font-bold">
             Ожидание анализа следующего шага власти...
           </div>
