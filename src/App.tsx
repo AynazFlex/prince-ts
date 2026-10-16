@@ -13,6 +13,7 @@ import Chapter11 from "./components/Chapter11";
 import Chapter12 from "./components/Chapter12";
 import Chapter13 from "./components/Chapter13";
 import Chapter14 from "./components/Chapter14";
+import Chapter15 from "./components/Chapter15";
 
 interface Chapter {
   id: number;
@@ -102,6 +103,12 @@ const chapters: Chapter[] = [
     section: "army",
     available: true,
   },
+  {
+    id: 15,
+    title: "15. За что государей хвалят или порицают",
+    section: "psychology",
+    available: true,
+  },
 ];
 
 export default function App() {
@@ -148,8 +155,10 @@ export default function App() {
           ${isMenuOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
         `}
       >
-        <div>
-          <div className="mb-6 p-2 border-b border-[#881337]/30">
+        {/* Изменили обертку на flex-колонку, чтобы nav занимал всю оставшуюся высоту */}
+        <div className="flex flex-col h-full overflow-hidden">
+          {/* Заголовок дашборда */}
+          <div className="mb-4 p-2 border-b border-[#881337]/30 shrink-0">
             <h1 className="text-lg font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-rose-500">
               IL PRINCIPE
             </h1>
@@ -158,9 +167,11 @@ export default function App() {
             </p>
           </div>
 
-          <nav className="space-y-1 overflow-y-auto max-h-[72vh] pr-1">
-            <div className="text-[10px] text-amber-500/60 uppercase font-bold px-2 py-1 tracking-wider">
-              I. Анатомия земель
+          {/* НАВИГАЦИЯ: Теперь flex-1 забирает всё свободное место, а overflow-y-auto дает красивый плавный скролл */}
+          <nav className="flex-1 overflow-y-auto space-y-1 pr-1 pb-4 custom-scrollbar">
+            {/* БЛОК I */}
+            <div className="text-[10px] text-amber-500/60 uppercase font-bold px-2 py-1 tracking-wider mb-1">
+              I. Анатомия земель (1-11)
             </div>
             {chapters
               .filter((ch) => ch.section === "anatomy")
@@ -172,7 +183,7 @@ export default function App() {
                     setActiveChapter(ch.id);
                     setIsMenuOpen(false);
                   }}
-                  className={`w-full text-left px-3 py-2.5 rounded text-xs transition-all ${
+                  className={`w-full text-left px-3 py-2 rounded text-xs transition-all mb-0.5 ${
                     activeChapter === ch.id
                       ? "bg-[#4c0519]/30 text-rose-400 border border-[#881337]/50 shadow-[0_0_15px_rgba(136,19,55,0.2)] font-bold"
                       : ch.available
@@ -183,8 +194,10 @@ export default function App() {
                   {ch.title}
                 </button>
               ))}
-            <div className="text-[10px] text-amber-500/60 uppercase font-bold px-2 py-1 tracking-wider">
-              II. Архитектура меча
+
+            {/* БЛОК II */}
+            <div className="text-[10px] text-sky-500/60 uppercase font-bold px-2 py-1 tracking-wider mt-4 mb-1">
+              II. Архитектура меча (12-14)
             </div>
             {chapters
               .filter((ch) => ch.section === "army")
@@ -196,7 +209,33 @@ export default function App() {
                     setActiveChapter(ch.id);
                     setIsMenuOpen(false);
                   }}
-                  className={`w-full text-left px-3 py-2.5 rounded text-xs transition-all ${
+                  className={`w-full text-left px-3 py-2 rounded text-xs transition-all mb-0.5 ${
+                    activeChapter === ch.id
+                      ? "bg-[#4c0519]/30 text-rose-400 border border-[#881337]/50 shadow-[0_0_15px_rgba(136,19,55,0.2)] font-bold"
+                      : ch.available
+                        ? "text-slate-400 hover:bg-[#16060c] hover:text-slate-200"
+                        : "text-slate-700 cursor-not-allowed opacity-20"
+                  }`}
+                >
+                  {ch.title}
+                </button>
+              ))}
+
+            {/* БЛОК III — ДОБАВИЛИ ФИЛЬТРАЦИЮ ДЛЯ ПСИХОЛОГИИ И ГЛАВЫ 15 */}
+            <div className="text-[10px] text-rose-500/60 uppercase font-bold px-2 py-1 tracking-wider mt-4 mb-1">
+              III. Маска Льва и Лисицы (15-26)
+            </div>
+            {chapters
+              .filter((ch) => ch.section === "psychology")
+              .map((ch) => (
+                <button
+                  key={ch.id}
+                  disabled={!ch.available}
+                  onClick={() => {
+                    setActiveChapter(ch.id);
+                    setIsMenuOpen(false);
+                  }}
+                  className={`w-full text-left px-3 py-2 rounded text-xs transition-all mb-0.5 ${
                     activeChapter === ch.id
                       ? "bg-[#4c0519]/30 text-rose-400 border border-[#881337]/50 shadow-[0_0_15px_rgba(136,19,55,0.2)] font-bold"
                       : ch.available
@@ -231,7 +270,8 @@ export default function App() {
         {activeChapter === 12 && <Chapter12 />}
         {activeChapter === 13 && <Chapter13 />}
         {activeChapter === 14 && <Chapter14 />}
-        {activeChapter > 14 && (
+        {activeChapter === 15 && <Chapter15 />}
+        {activeChapter > 15 && (
           <div className="flex items-center justify-center h-full text-[#4c0519] text-xs tracking-widest uppercase font-bold">
             Ожидание анализа следующего шага власти...
           </div>
