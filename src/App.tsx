@@ -19,6 +19,7 @@ import Chapter17 from "./components/Chapter17";
 import Chapter18 from "./components/Chapter18";
 import Chapter19 from "./components/Chapter19";
 import Chapter20 from "./components/Chapter20";
+import Chapter21 from "./components/Chapter21";
 
 interface Chapter {
   id: number;
@@ -141,6 +142,12 @@ const chapters: Chapter[] = [
   {
     id: 20,
     title: "20. Полезны ли крепости",
+    section: "psychology",
+    available: true,
+  },
+  {
+    id: 21,
+    title: "21. Как поступать, чтобы тебя почитали",
     section: "psychology",
     available: true,
   },
@@ -311,7 +318,8 @@ export default function App() {
         {activeChapter === 18 && <Chapter18 />}
         {activeChapter === 19 && <Chapter19 />}
         {activeChapter === 20 && <Chapter20 />}
-        {activeChapter > 20 && (
+        {activeChapter === 21 && <Chapter21 />}
+        {activeChapter > 21 && (
           <div className="flex items-center justify-center h-full text-[#4c0519] text-xs tracking-widest uppercase font-bold">
             Ожидание анализа следующего шага власти...
           </div>
