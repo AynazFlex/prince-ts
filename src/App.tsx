@@ -22,6 +22,7 @@ import Chapter20 from "./components/Chapter20";
 import Chapter21 from "./components/Chapter21";
 import Chapter22 from "./components/Chapter22";
 import Chapter23 from "./components/Chapter23";
+import Chapter24 from "./components/Chapter24";
 
 interface Chapter {
   id: number;
@@ -162,6 +163,12 @@ const chapters: Chapter[] = [
   {
     id: 23,
     title: "23. Как избегать льстецов",
+    section: "psychology",
+    available: true,
+  },
+  {
+    id: 24,
+    title: "24. Почему государи Италии лишились государств",
     section: "psychology",
     available: true,
   },
@@ -335,7 +342,8 @@ export default function App() {
         {activeChapter === 21 && <Chapter21 />}
         {activeChapter === 22 && <Chapter22 />}
         {activeChapter === 23 && <Chapter23 />}
-        {activeChapter > 23 && (
+        {activeChapter === 24 && <Chapter24 />}
+        {activeChapter > 24 && (
           <div className="flex items-center justify-center h-full text-[#4c0519] text-xs tracking-widest uppercase font-bold">
             Ожидание анализа следующего шага власти...
           </div>
