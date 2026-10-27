@@ -24,6 +24,7 @@ import Chapter22 from "./components/Chapter22";
 import Chapter23 from "./components/Chapter23";
 import Chapter24 from "./components/Chapter24";
 import Chapter25 from "./components/Chapter25";
+import Chapter26 from "./components/Chapter26";
 
 interface Chapter {
   id: number;
@@ -176,6 +177,12 @@ const chapters: Chapter[] = [
   {
     id: 25,
     title: "25. Власть Фортуны над людьми",
+    section: "psychology",
+    available: true,
+  },
+  {
+    id: 26,
+    title: "26. Призыв освободить Италию от варваров",
     section: "psychology",
     available: true,
   },
@@ -351,7 +358,8 @@ export default function App() {
         {activeChapter === 23 && <Chapter23 />}
         {activeChapter === 24 && <Chapter24 />}
         {activeChapter === 25 && <Chapter25 />}
-        {activeChapter > 25 && (
+        {activeChapter === 26 && <Chapter26 />}
+        {activeChapter > 26 && (
           <div className="flex items-center justify-center h-full text-[#4c0519] text-xs tracking-widest uppercase font-bold">
             Ожидание анализа следующего шага власти...
           </div>
