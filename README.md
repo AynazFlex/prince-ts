@@ -1,32 +1,39 @@
-# React + TypeScript + Vite
+# 👑 PRINCE-TS — Визуальная матрица принятия решений
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Интерактивный цифровой архив и дерево стратегических развилок по политическому трактату **Никколо Макиавелли «Государь»** (перевод Г. Муравьевой). Проект представляет собой структурированную карту смыслов, исследующую механизмы удержания власти, психологию масс и баланс между личной силой (`Virtù`) и слепой судьбой (`Fortuna`).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🎨 Архитектурные особенности и интерфейс
 
-## React Compiler
+*   **Дизайн «Флорентийской Канцелярии»:** Атмосферный интерфейс в глубоких багрово-черных и золотых тонах, полностью сбрасывающий стандартные стили отображения графов.
+*   **Динамическая эргономика (`h-dvh`):** Верстка оптимизирована под мобильные операционные системы, предотвращая скрытие подвала меню под системными панелями браузеров.
+*   **Группировка навигации:** Полноценный гибкий сайдбар, разделяющий 26 глав книги на три независимых концептуальных блока без использования фиксированной высоты.
+*   **Интерактивный холст:** Полноэкранные схемы на базе `@xyflow/react` с поддержкой перемещения узлов, динамического зума и анимированных векторов интриг.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## 🛠 Технологический стек
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+*   **Инструменты сборки:** Vite / TypeScript
+*   **Библиотеки:** React / @xyflow/react (React Flow)
+*   **Стилизация:** Tailwind CSS v4
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+---
+
+## 🚀 Быстрый старт
+
+```bash
+git clone https://github.com
+cd prince-ts
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+---
+
+## 📐 Структурное деление конспекта
+
+*   **I. Анатомия земель (Главы 1–11):** Картография пространств от наследственных монархий до теократических государств.
+*   **II. Архитектура меча (Главы 12–14):** Военная доктрина, аудит пороков наемного воинства и построение гражданской армии.
+*   **III. Маска Льва и Лисицы (Главы 15–26):** Политический реализм, управление страхом и натиск против бурного потока Фортуны.
