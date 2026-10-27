@@ -1,30 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import Chapter1 from "./components/Chapter1";
-import Chapter2 from "./components/Chapter2";
-import Chapter3 from "./components/Chapter3";
-import Chapter4 from "./components/Chapter4";
-import Chapter5 from "./components/Chapter5";
-import Chapter6 from "./components/Chapter6";
-import Chapter7 from "./components/Chapter7";
-import Chapter8 from "./components/Chapter8";
-import Chapter9 from "./components/Chapter9";
-import Chapter10 from "./components/Chapter10";
-import Chapter11 from "./components/Chapter11";
-import Chapter12 from "./components/Chapter12";
-import Chapter13 from "./components/Chapter13";
-import Chapter14 from "./components/Chapter14";
-import Chapter15 from "./components/Chapter15";
-import Chapter16 from "./components/Chapter16";
-import Chapter17 from "./components/Chapter17";
-import Chapter18 from "./components/Chapter18";
-import Chapter19 from "./components/Chapter19";
-import Chapter20 from "./components/Chapter20";
-import Chapter21 from "./components/Chapter21";
-import Chapter22 from "./components/Chapter22";
-import Chapter23 from "./components/Chapter23";
-import Chapter24 from "./components/Chapter24";
-import Chapter25 from "./components/Chapter25";
-import Chapter26 from "./components/Chapter26";
+import { Chapters } from "./components";
 
 interface Chapter {
   id: number;
@@ -333,32 +308,32 @@ export default function App() {
 
       {/* ХОЛСТ СХЕМ */}
       <main className="flex-1 h-full bg-[#090204] relative w-full">
-        {activeChapter === 1 && <Chapter1 />}
-        {activeChapter === 2 && <Chapter2 />}
-        {activeChapter === 3 && <Chapter3 />}
-        {activeChapter === 4 && <Chapter4 />}
-        {activeChapter === 5 && <Chapter5 />}
-        {activeChapter === 6 && <Chapter6 />}
-        {activeChapter === 7 && <Chapter7 />}
-        {activeChapter === 8 && <Chapter8 />}
-        {activeChapter === 9 && <Chapter9 />}
-        {activeChapter === 10 && <Chapter10 />}
-        {activeChapter === 11 && <Chapter11 />}
-        {activeChapter === 12 && <Chapter12 />}
-        {activeChapter === 13 && <Chapter13 />}
-        {activeChapter === 14 && <Chapter14 />}
-        {activeChapter === 15 && <Chapter15 />}
-        {activeChapter === 16 && <Chapter16 />}
-        {activeChapter === 17 && <Chapter17 />}
-        {activeChapter === 18 && <Chapter18 />}
-        {activeChapter === 19 && <Chapter19 />}
-        {activeChapter === 20 && <Chapter20 />}
-        {activeChapter === 21 && <Chapter21 />}
-        {activeChapter === 22 && <Chapter22 />}
-        {activeChapter === 23 && <Chapter23 />}
-        {activeChapter === 24 && <Chapter24 />}
-        {activeChapter === 25 && <Chapter25 />}
-        {activeChapter === 26 && <Chapter26 />}
+        {activeChapter === 1 && Chapters.chapter1}
+        {activeChapter === 2 && Chapters.chapter2}
+        {activeChapter === 3 && Chapters.chapter3}
+        {activeChapter === 4 && Chapters.chapter4}
+        {activeChapter === 5 && Chapters.chapter5}
+        {activeChapter === 6 && Chapters.chapter6}
+        {activeChapter === 7 && Chapters.chapter7}
+        {activeChapter === 8 && Chapters.chapter8}
+        {activeChapter === 9 && Chapters.chapter9}
+        {activeChapter === 10 && Chapters.chapter10}
+        {activeChapter === 11 && Chapters.chapter11}
+        {activeChapter === 12 && Chapters.chapter12}
+        {activeChapter === 13 && Chapters.chapter13}
+        {activeChapter === 14 && Chapters.chapter14}
+        {activeChapter === 15 && Chapters.chapter15}
+        {activeChapter === 16 && Chapters.chapter16}
+        {activeChapter === 17 && Chapters.chapter17}
+        {activeChapter === 18 && Chapters.chapter18}
+        {activeChapter === 19 && Chapters.chapter19}
+        {activeChapter === 20 && Chapters.chapter20}
+        {activeChapter === 21 && Chapters.chapter21}
+        {activeChapter === 22 && Chapters.chapter22}
+        {activeChapter === 23 && Chapters.chapter23}
+        {activeChapter === 24 && Chapters.chapter24}
+        {activeChapter === 25 && Chapters.chapter25}
+        {activeChapter === 26 && Chapters.chapter26}
         {activeChapter > 26 && (
           <div className="flex items-center justify-center h-full text-[#4c0519] text-xs tracking-widest uppercase font-bold">
             Ожидание анализа следующего шага власти...
